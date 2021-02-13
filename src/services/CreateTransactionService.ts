@@ -20,8 +20,8 @@ interface RequestDTO {
 class CreateTransactionService {
   public async execute({
     title,
-    value,
     type,
+    value,
     category,
   }: RequestDTO): Promise<Transaction> {
     let categoryID;
