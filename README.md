@@ -19,5 +19,6 @@ Porém mesmo com esse teste não passando pude aprender os seguintes temas:
  - Diferenças no uso de .map, .foreach e . for of em loops assincronos.
  - Utilização do IndexOf
 
+<br>
 
-- Correções e pontos de melhoria foram adicionados ao código em formato de comentário.
+Correções e pontos de melhoria foram adicionados ao código em formato de comentário.
