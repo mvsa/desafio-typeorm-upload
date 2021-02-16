@@ -27,11 +27,22 @@ class CreateTransactionService {
     let categoryID;
     const transactionsRepository = getCustomRepository(TransactionsRepository);
 
+    // importou o repositorio padrão - não criou um custom
     const categoriesRepository = getCustomRepository(CategoriesRepository);
 
+    // let tranCategorie = await categoryRepository.findOne({   não precisoou usar um repository custom
+    //   where:{
+    //     title:category
+    //   }
+    // })
     const oldCategorie = await categoriesRepository.checkIfAlreadyExists(
       category,
     );
+
+    // const { total } = await transactionsRepository.getBalance();
+    // if (type === 'outcome' && total < value) {
+    //   throw new AppError('Not enough money!', 400);
+    // }
 
     if (type === 'outcome') {
       const balance = await transactionsRepository.getBalance();
@@ -42,10 +53,12 @@ class CreateTransactionService {
     }
 
     if (!oldCategorie) {
+      // tranCategorie  = categoriesRepository.create({
       const newCategorie = categoriesRepository.create({
         title: category,
       });
 
+      // await categoriesRepository.save(tranCategorie);
       await categoriesRepository.save(newCategorie);
 
       categoryID = newCategorie.id;
@@ -56,7 +69,8 @@ class CreateTransactionService {
     const transaction = transactionsRepository.create({
       title,
       value,
-      category_id: categoryID,
+      category_id: categoryID, // não passou esse
+      // category:tranCategorie
       type,
     });
 

@@ -31,6 +31,9 @@ class Transaction {
   @Column()
   category_id: string;
 
+  // @ManyToOne(()=>Category)
+  // @JoinColumn({ name: 'category_id' })
+
   @OneToOne(() => Category)
   @JoinColumn({ name: 'category_id' })
   category: Category;

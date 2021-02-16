@@ -34,8 +34,12 @@ export default class CreateTransactionss1612848600608
             name: 'value',
             type: 'integer',
             isNullable: false,
+            // type: decimal,
+            // precision:10,
+            // scale: 2
           },
           {
+            // não era obrigatorio
             name: 'category_id',
             type: 'uuid',
             isNullable: false,
@@ -61,6 +65,8 @@ export default class CreateTransactionss1612848600608
         columnNames: ['category_id'],
         referencedTableName: 'categories',
         referencedColumnNames: ['id'],
+        // onUpdate: 'CASCADE',
+        // onDelete: 'SET NULL'
       }),
     );
   }
