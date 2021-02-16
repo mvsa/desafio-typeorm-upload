@@ -17,6 +17,7 @@ Porém mesmo com esse teste não passando pude aprender os seguintes temas:
  - Manipulação de CSV com Javascript
  - Conceito de book insert
  - Diferenças no uso de .map, .foreach e . for of em loops assincronos.
+ - Utilização do IndexOf
 
 
 - Correções e pontos de melhoria foram adicionados ao código em formato de comentário.

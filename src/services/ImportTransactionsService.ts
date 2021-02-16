@@ -69,7 +69,9 @@ class ImportTransactionsService {
 
     // const addCategoryTitles = categories
     //   .filter(category => !existentCategoriesTitles.includes(category))
-    //   .filter((value, index, self) => self.indexOf(value) === index);
+    //   .filter((value, index, self) => self.indexOf(value) === index); //remove duplicados presente no csv
+    // self é o proprio array categories
+    // indexOf retorna a primeira recorrencia do valor pesquisado
 
     // const newCategories = categoriesRepository.create(
     //   addCategoryTitles.map(title => ({
