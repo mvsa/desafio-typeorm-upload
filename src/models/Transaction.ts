@@ -5,6 +5,7 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   OneToOne,
+  ManyToOne,
   JoinColumn,
 } from 'typeorm';
 import Category from './Category';
@@ -32,6 +33,9 @@ class Transaction {
   category_id: string;
 
   // @ManyToOne(()=>Category)
+  // @JoinColumn({ name: 'category_id' })
+
+  // @ManyToOne(() => Category, category => category.transaction, { eager: true }) // Eager loading, serve pra automaticamente trazer as relations quando eu pesquisar pelos elementos pai com find(), precisa fazer nas relations tb
   // @JoinColumn({ name: 'category_id' })
 
   @OneToOne(() => Category)

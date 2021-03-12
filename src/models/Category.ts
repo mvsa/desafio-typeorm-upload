@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import Transaction from './Transaction';
 
 @Entity('categories')
 class Category {
@@ -13,6 +14,9 @@ class Category {
 
   @Column()
   updated_at: Date;
+
+  // @OneToMany(() => Transaction, transaction => transaction.category) // Precisa para que o eagerLoding funcione
+  // transaction: Transaction;
 }
 
 export default Category;

@@ -15,9 +15,12 @@ const upload = multer(uploadConfig);
 transactionsRouter.get('/', async (request, response) => {
   const transactionsRepository = getCustomRepository(TransactionsRepository);
   const transactions = await transactionsRepository.find({
-    select: ['id', 'title', 'value', 'type', 'created_at', 'updated_at'],
+    // select: ['id', 'title', 'value', 'type', 'created_at', 'updated_at'],
     relations: ['category'],
   });
+
+  // const transactions = await transactionsRepository.find(); // Com o eager loading, ja vou trazer as transactions e as relations dela automaticamente
+
   const balance = await transactionsRepository.getBalance();
   return response.json({ transactions, balance });
 });
