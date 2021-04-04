@@ -26,7 +26,10 @@ function fileFilter(
   file: Express.Multer.File,
   callback: FileFilterCallback,
 ): void {
-  if (file.mimetype === 'text/csv') {
+  if (
+    file.mimetype === 'text/csv' ||
+    file.mimetype === 'application/vnd.ms-excel'
+  ) {
     return callback(null, true);
   }
   return callback(null, false);
